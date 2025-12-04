@@ -1,28 +1,49 @@
-<?php 
-$a="mening ismim Mirzabek";
-$b="yOsHiM 17";
-$c=[12,"english club",true];
- 
-echo strlen($a) . "<br>";
-echo strpos( $b, 17) . "<br>";
-echo strtoupper($a) . "<br>";
-echo strtolower($b) . "<br>";
-echo trim($a) . "<br>";
-echo strrev($b) . "<br>";
-echo str_word_count($a);
-echo str_replace("mening ismim", "pasportdagi ismim",$a);
 
-    $test_0=explode(" ", $a) ;
- 
-    print_r($test_0);
+<?php
 
-    echo substr($a,6,6);
-    $d="<br>" . "<p>Lorem, ipsum dolor sit amet consectetur \"adipisicing\" elit. Eius 500\$ non porro. Lorem ipsum dolor sit amet consectetur adipisicing elit. \n Perferendis, eum excepturi fugiat illo qui distinctio delectus nemo animi, eveniet harum aliquid dolorem saepe illum itaque rem! Maxime minus magni aliquid!<p>";
+/* class Myvalue{
+    public static $attendans1= 38+12;
+    public static $attendans2= "N2";
 
-    echo $d . "<br>";
-   
-    $F=nl2br("My\nname");
+    public static function attendance_1(){
+       echo  self::$attendans1;
+    }
+}
 
-    echo $F; 
+class Yourvalue extends Myvalue{
+    public static $attendans2 = 20+20/5*3-4;
+    public static function attendance_2(){
+        echo self::$attendans2;
+    }
+
+}
+
+echo Myvalue::$attendans1;  
+ Myvalue::attendance_1();
+Yourvalue::attendance_1(); */
+
+
+class Id_giver{
+ public static $counter=0;
+ public $name;
+ public $id;
+ public  function __construct($name){
+    self::$counter++;
+    $this->id=self::$counter;
+    $this->name=$name;
+ }
+ public function info(){
+    return "Id : {$this->id} , name of participant: {$this->name}";
+ }
+
+
+}
+
+
+
+
+$user= new Id_giver('Abdlla');
+echo  $user->info();
+
 
 ?>
